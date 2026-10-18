@@ -1,7 +1,7 @@
 > [!WARNING]
 > Pack in development
 
-> [!NOTICE]
+> [!NOTE]
 > AI Usage
 
 C:TLS (Changed: The Last Stand) is a project created by kodyris.  This datapack manages all of the core behavior of C:TLS, between giving gear, weapons, tools, armor, and setting scoreboards.
