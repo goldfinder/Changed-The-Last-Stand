@@ -13,4 +13,4 @@ C:TLS (Changed: The Last Stand) is a project created by kodyris.  This datapack 
 [Examination (Roblox)](https://www.roblox.com/games/10165583746/Examination)
 
 ## AI USAGE:
-AI was used to help figure out how to create, and setup the mcfunctions for execution order, EX: Queue Tick > Process_next_in_queue > <class> > Weapons/Gear
+AI was used to help figure out how to create, and setup the mcfunctions for execution order, EX: Queue Tick > Process_next_in_queue > {CLASS} > Weapons/Gear
