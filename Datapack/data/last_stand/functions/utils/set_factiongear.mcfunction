@@ -8,5 +8,3 @@ execute unless data storage last_stand:var {FactionGearGiven:1b} if entity @p[ta
 
 # 3. Fallbacks: Check for empty string OR missing key (Runs DEFAULT ONLY IF FactionGearGiven is NOT set)
 execute unless data storage last_stand:var {FactionGearGiven:1b} run function last_stand:factiongear/tscfs
-
-data remove storage last_stand:var FactionGearGiven
