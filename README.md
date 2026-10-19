@@ -1,5 +1,5 @@
 > [!WARNING]
-> Pack in development
+> Pack in development [EARLY PRE-ALPHA]
 
 > [!NOTE]
 > AI Usage
