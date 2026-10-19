@@ -2,17 +2,19 @@
 data modify storage last_stand:persist ActiveTarget set value 1b
 tag @r[tag=Queued] add Target
 tag @p[tag=Target] remove Queued
-clear @p[tag=Target]
-effect clear @p[tag=Target]
-item replace entity @p[tag=Target] container.10 with minecraft:compass{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
-item replace entity @p[tag=Target] container.9 with minecraft:clock{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
-function last_stand:utils/set_factiongear
-execute if entity @p[tag=Target,tag=Pointman] run function last_stand:gear/pointman
-execute if entity @p[tag=Target,tag=Overseer] run function last_stand:gear/overseer
-execute if entity @p[tag=Target,tag=Riot] run function last_stand:gear/riot
-execute if entity @p[tag=Target,tag=Breach] run function last_stand:gear/breacher
-execute if entity @p[tag=Target,tag=Sniper] run function last_stand:gear/sniper
-execute if entity @p[tag=Target,tag=Default] run function last_stand:gear/default
-execute if entity @p[tag=Target,tag=Underequipped] run function last_stand:gear/underequipped
-execute if entity @p[tag=Target,tag=!Pointman,tag=!Overseer,tag=!Riot,tag=!Breach,tag=!Sniper,tag=!Default,tag=!Underequipped] run function last_stand:gear/default
+# --- Queue Manager ---
+scoreboard players set #Total Team_Count 0
+execute if entity @p[tag=Target,tag=Breach] store result score #Total Team_Count if entity @a[team=Breacher,tag=!Target]
+execute if entity @p[tag=Target,tag=Pointman] store result score #Total Team_Count if entity @a[team=Pointman,tag=!Target]
+execute if entity @p[tag=Target,tag=Riot] store result score #Total Team_Count if entity @a[team=Riot,tag=!Target]
+execute if entity @p[tag=Target,tag=Sniper] store result score #Total Team_Count if entity @a[team=Sniper,tag=!Target]
+# --- Queue Checker ---
+execute if entity @p[tag=Target,tag=Breach] if score #Total Team_Count matches 4.. run data modify storage last_stand:var Full set value 1b
+execute if entity @p[tag=Target,tag=Pointman] if score #Total Team_Count matches 8.. run data modify storage last_stand:var Full set value 1b
+execute if entity @p[tag=Target,tag=Riot] if score #Total Team_Count matches 2.. run data modify storage last_stand:var Full set value 1b
+execute if entity @p[tag=Target,tag=Sniper] if score #Total Team_Count matches 2.. run data modify storage last_stand:var Full set value 1b
+# Reject/Notify if full, otherwise pass execution to process_user_class
+execute if data storage last_stand:var {Full:1b} run tellraw @p[tag=Target] [{"text":"[C:TLS] ","color":"red","bold":true},{"text":"Selected class role is full! Rejoining queue denied.","color":"gray"}]
+execute unless data storage last_stand:var {Full:1b} run function last_stand:core/process_user_class
+
 function last_stand:core/reset_target
