@@ -1,0 +1,10 @@
+//---MDP CONFIGS---
+cfg.Enabled = true    //Configuration Enabled (Allows running)
+cfg.Permission = 0    //Configuration Minimum Permission usability (0=any)
+//---FUNC BELOW---
+
+function Combats(<player>) {
+	mdp run Gear_Normal:GetBoots <player> 5741226
+	mdp run Gear_Normal:GetLeggings <player> 5741226
+	mdp run Gear_Normal:GetChestplate <player> 5741226
+}
