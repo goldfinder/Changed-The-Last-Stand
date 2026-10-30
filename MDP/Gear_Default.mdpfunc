@@ -22,7 +22,7 @@ function IssueTier(<player>) {
 }
 
 function GetGear(<player>) {
-	clear <player>
+	mdp run Gear_Normal:DefaultSet <player>
 	mdp run Faction_TSCLS:Combats <player>
 	mdp run Gear_Normal:GetHelmet <player> 5592405
 	mdp run Gear_Default:IssueTier <player>
