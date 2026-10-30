@@ -1,0 +1,21 @@
+//---MDP CONFIGS---
+cfg.Enabled = true    //Configuration Enabled (Allows running)
+cfg.Permission = 0    //Configuration Minimum Permission usability (0=any)
+//---FUNC BELOW---
+
+function GetPistol(<player>) {
+	if <player> has tag "Pistol_Taurus" {
+		item replace entity <player> container.1 with tacz:modern_kinetic_gun{HasBulletInBarrel:1b,GunId:"tacz:taurus500",GunCurrentAmmoCount:5,GunFireMode:"SEMI",Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+		item replace entity <player> container.17 with tacz:ammo_box{AmmoCount:175,AmmoId:"tacz:500mag",Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+	} else if <player> has tag "Pistol_Deagle" {
+		item replace entity <player> container.1 with tacz:modern_kinetic_gun{HasBulletInBarrel:1b,GunId:"tacz:deagle_golden",GunCurrentAmmoCount:9,GunFireMode:"SEMI",Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+		item replace entity <player> container.17 with tacz:ammo_box{AmmoCount:135,AmmoId:"tacz:357mag",Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+	} else {
+		item replace entity <player> container.1 with tacz:modern_kinetic_gun{HasBulletInBarrel:1b,GunId:"tacz:glock_17",GunCurrentAmmoCount:17,GunFireMode:"SEMI",Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+		item replace entity <player> container.17 with tacz:ammo_box{AmmoCount:102,AmmoId:"tacz:9mm",Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+	}
+}
+
+function GetMelee(<player>) {
+	item replace entity <player> container.3 with minecraft:iron_sword{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"minecraft:binding_curse",lvl:1}],Unbreakable:1b}
+}
