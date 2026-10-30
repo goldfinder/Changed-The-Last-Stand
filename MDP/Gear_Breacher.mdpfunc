@@ -1,0 +1,31 @@
+//---MDP CONFIGS---
+cfg.Enabled = true    //Configuration Enabled (Allows running)
+cfg.Permission = 0    //Configuration Minimum Permission usability (0=any)
+//---FUNC BELOW---
+
+function T1(<player>) {
+	item replace entity <player> container.0 with tacz:modern_kinetic_gun{HasBulletInBarrel:1b,GunId:"tacz:m1014",GunCurrentAmmoCount:8,GunFireMode:"SEMI",AttachmentEXTENDED_MAG: {id: "tacz:attachment", Count: 1b, tag: {AttachmentId: "tacz:shotgun_extended_mag_1"}},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+	item replace entity <player> container.16 with tacz:ammo_box{AmmoCount:64,AmmoId:"tacz:12g",Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+}
+
+function T0(<player>) {
+	item replace entity <player> container.0 with tacz:modern_kinetic_gun{HasBulletInBarrel:1b,GunId:"tacz:m870",GunCurrentAmmoCount:5,GunFireMode:"SEMI",Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+	item replace entity <player> container.16 with tacz:ammo_box{AmmoCount:36,AmmoId:"tacz:12g",Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+}
+
+function IssueTier(<player>) {
+	if <player> has tag "Upgraded" {
+		mdp run Gear_Breacher:T1 <player>
+	} else {
+		mdp run Gear_Breacher:T0 <player>
+	}
+}
+
+function GetGear(<player>) {
+	mdp run Gear_Normal:DefaultSet <player>
+	mdp run Faction_TSCLS:Combats <player>
+	mdp run Gear_Normal:GetHelmet <player> 5592575
+	mdp run Gear_Breacher:IssueTier <player>
+	mdp run Gear_Normal:GetPistol <player>
+	mdp run Gear_Normal:GetMelee <player>
+}
