@@ -35,3 +35,14 @@ function GetBoots(<player>,<color>) {
 function GetMelee(<player>) {
 	item replace entity <player> container.3 with minecraft:iron_sword{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"minecraft:binding_curse",lvl:1}],Unbreakable:1b}
 }
+
+function GetUtilities(<player>) {
+	item replace entity <player> container.10 with minecraft:compass{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+	item replace entity <player> container.9 with minecraft:clock{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+}
+
+function DefaultSet(<player>) {
+	clear <player>
+	mdp run Gear_Normal:GetUtilities <player>
+	mdp run Gear_Normal:GetMelee <player>
+}
