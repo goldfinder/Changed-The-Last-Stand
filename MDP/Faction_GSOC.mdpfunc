@@ -5,17 +5,17 @@ cfg.Permission = 0    //Configuration Minimum Permission usability (0=any)
 
 function Formals(<player>) {
 	clear <player>
-	item replace entity <player> armor.feet with minecraft:leather_boots{display:{color:1328196},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"minecraft:binding_curse",lvl:1}],Unbreakable:1b}
-	item replace entity <player> armor.legs with minecraft:leather_leggings{display:{color:1328196},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"minecraft:binding_curse",lvl:1}],Unbreakable:1b}
-	item replace entity <player> armor.chest with minecraft:leather_chestplate{display:{color:1328196},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"minecraft:binding_curse",lvl:1}],Unbreakable:1b}
-	item replace entity <player> armor.head with minecraft:leather_helmet{display:{color:1328196},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"minecraft:binding_curse",lvl:1}],Unbreakable:1b}
+	mdp run Gear_Normal:GetBoots <player> 1328196
+	mdp run Gear_Normal:GetLeggings <player> 1328196
+	mdp run Gear_Normal:GetChestplate <player> 1328196
+	mdp run Gear_Normal:GetHelmet <player> 1328196
 }
 
 function Combats(<player>) {
 	clear <player>
-	item replace entity <player> armor.feet with minecraft:leather_boots{display:{color:6250335},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"minecraft:binding_curse",lvl:1}],Unbreakable:1b}
-	item replace entity <player> armor.legs with minecraft:leather_leggings{display:{color:6250335},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"minecraft:binding_curse",lvl:1}],Unbreakable:1b}
-	item replace entity <player> armor.chest with minecraft:leather_chestplate{display:{color:6250335},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"minecraft:binding_curse",lvl:1}],Unbreakable:1b}
+	mdp run Gear_Normal:GetBoots <player> 6250335
+	mdp run Gear_Normal:GetLeggings <player> 6250335
+	mdp run Gear_Normal:GetChestplate <player> 6250335
 	item replace entity <player> container.0 with tacz:modern_kinetic_gun{HasBulletInBarrel:1b,GunId:"tacz:g36k",GunCurrentAmmoCount:30,GunFireMode:"AUTO",Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
 	item replace entity <player> container.16 with tacz:ammo_box{AmmoCount:150,AmmoId:"tacz:556x45",Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
 }
