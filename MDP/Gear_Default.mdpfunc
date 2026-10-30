@@ -3,10 +3,6 @@ cfg.Enabled = true    //Configuration Enabled (Allows running)
 cfg.Permission = 0    //Configuration Minimum Permission usability (0=any)
 //---FUNC BELOW---
 
-function GetHelmet(<player>) {
-	item replace entity <player> armor.head with minecraft:leather_helmet{display:{color:5592405},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"minecraft:binding_curse",lvl:1}],Unbreakable:1b}
-}
-
 function T1(<player>) {
 	
 }
@@ -28,7 +24,7 @@ function IssueTier(<player>) {
 function GetGear(<player>) {
 	clear <player>
 	mdp run Faction_TSCLS:Combats <player>
-	mdp run Gear_Default:GetHelmet <player>
+	mdp run Gear_Normal:GetHelmet <player> 5592405
 	mdp run Gear_Default:IssueTier <player>
 	mdp run Gear_Normal:GetPistol <player>
 	mdp run Gear_Normal:GetMelee <player>
