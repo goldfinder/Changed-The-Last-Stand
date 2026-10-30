@@ -5,6 +5,7 @@ cfg.Permission = 0    //Configuration Minimum Permission usability (0=any)
 
 function Formals(<player>) {
 	clear <player>
+	mdp run Gear_Normal:GetUtilities <player>
 	mdp run Gear_Normal:GetBoots <player> 1328196
 	mdp run Gear_Normal:GetLeggings <player> 1328196
 	mdp run Gear_Normal:GetChestplate <player> 1328196
@@ -12,7 +13,7 @@ function Formals(<player>) {
 }
 
 function Combats(<player>) {
-	clear <player>
+	mdp run Gear_Normal:DefaultSet <player>
 	mdp run Gear_Normal:GetBoots <player> 6250335
 	mdp run Gear_Normal:GetLeggings <player> 6250335
 	mdp run Gear_Normal:GetChestplate <player> 6250335
