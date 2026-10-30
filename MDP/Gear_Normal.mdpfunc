@@ -16,6 +16,22 @@ function GetPistol(<player>) {
 	}
 }
 
+function GetHelmet(<player>,<color>) {
+	item replace entity <player> armor.head with minecraft:leather_helmet{display:{color:<color>},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"minecraft:binding_curse",lvl:1}],Unbreakable:1b}
+}
+
+function GetChestplate(<player>,<color>) {
+	item replace entity <player> armor.chest with minecraft:leather_chestplate{display:{color:<color>},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"minecraft:binding_curse",lvl:1}],Unbreakable:1b}
+}
+
+function GetLeggings(<player>,<color>) {
+	item replace entity <player> armor.legs with minecraft:leather_leggings{display:{color:<color>},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"minecraft:binding_curse",lvl:1}],Unbreakable:1b}
+}
+
+function GetBoots(<player>,<color>) {
+	item replace entity <player> armor.feet with minecraft:leather_boots{display:{color:<color>},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"minecraft:binding_curse",lvl:1}],Unbreakable:1b}
+}
+
 function GetMelee(<player>) {
 	item replace entity <player> container.3 with minecraft:iron_sword{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"minecraft:binding_curse",lvl:1}],Unbreakable:1b}
 }
