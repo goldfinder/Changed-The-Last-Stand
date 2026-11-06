@@ -12,7 +12,7 @@ C:TLS (Changed: The Last Stand) is a project created by kodyris.  This datapack 
 
 [Examination (Roblox)](https://www.roblox.com/games/10165583746/Examination)
 
-[Black Hawk Rescue Mission 5 (Operations Cryo/Zombies) (Roblox)](https://www.roblox.com/games/2916899287/Blackhawk-Rescue-Mission-5)
+[Blackhawk Rescue Mission 5 (Operation Cryo/Zombies) (Roblox)](https://www.roblox.com/games/2916899287/Blackhawk-Rescue-Mission-5)
 
 ## AI USAGE:
 AI was used to help figure out how to create, and setup the mcfunctions for execution order, EX: Queue Tick > Process_next_in_queue > {CLASS} > Weapons/Gear
